@@ -11,8 +11,8 @@
           <el-menu-item index="1" :route="{name: 'homePage'}" :disabled="false">
             Home Page
           </el-menu-item>
-          <el-menu-item index="2" :route="{name: 'homePage'}" :disabled="false">
-            Some other page
+          <el-menu-item index="2" :route="{name: 'statsCentre'}" :disabled="false">
+            Stats Centre
           </el-menu-item>
         </el-menu>
       </el-col>
