@@ -58,9 +58,9 @@
             }
         },
         methods: {
-            loadData() {
+            loadData(url) {
                 this.loading = true;
-                this.getDataPromise = this.http.get(this.getUrl)
+                this.getDataPromise = this.http.get(url)
                     .then((response) => {
                         response.data.list.forEach((x) => {
                             this.data.push(x);
@@ -76,7 +76,7 @@
         },
         created() {
             if (this.getUrl) {
-                this.loadData();
+                this.loadData(this.getUrl);
             }
         }
     };

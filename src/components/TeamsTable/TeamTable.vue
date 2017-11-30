@@ -1,6 +1,6 @@
 <template>
 <div>
-    <table-component getUrl="teams" title="Available Teams">
+    <table-component getUrl="teams" title="Available Teams" :enableAggregation="true">
         <el-table-column prop="id" label="S.No."></el-table-column>
         <el-table-column prop="name" label="Name">
             <template slot-scope="scope">
@@ -18,6 +18,6 @@
 
     export default {
         components: {TableComponent},
-        name: "team-table"
+        name: "team-table",
     }
 </script>
