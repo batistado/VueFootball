@@ -1,5 +1,6 @@
 import HomePage from './pages/HomePage.vue';
 import StatsCentre from './pages/StatsCentre.vue';
+import TeamStats from './pages/TeamStats.vue';
 
 export default {
     routes: [
@@ -12,6 +13,11 @@ export default {
             path: '/statsCentre',
             name: 'statsCentre',
             component: StatsCentre,
+        },
+        {
+            path: '/teamStats/:teamId',
+            name: 'teamStats',
+            component: TeamStats,
         },
     ],
 };
