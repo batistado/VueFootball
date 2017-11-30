@@ -3,28 +3,19 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 const state = {
-    teams: [
-        {
-            name: 'Real Madrid',
-            players: [
-                {
-                    name: 'Cristiano Ronaldo',
-                    rating: 94,
-                    position: 'Forward'
-                }
-            ]
-        }
-    ]
+    teams: [],
 };
 
 const mutations = {
-    INCREMENT_COUNT(state) {
-        state.count++;
-    },
+    INITIALIZE(state, data) {
+        teams = data;
+    }
 };
 
 const actions = {
-    incCount : ({ commit }) => commit('INCREMENT_COUNT'),
+    initializeTeams({commit}) {
+        commit('INITIALIZE');
+    }
 };
 
 export default new Vuex.Store({
