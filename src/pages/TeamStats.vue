@@ -1,21 +1,17 @@
 <template>
-    <table-component :getUrl="`/teams/${teamId}/players`" :title="`${teamName} Roster:`">
-        <el-table-column prop="name" label="Name"></el-table-column>
-        <el-table-column prop="rating" label="Rating"></el-table-column>
-        <el-table-column prop="age" label="Age"></el-table-column>
-        <el-table-column prop="position" label="Position"></el-table-column>
-    </table-component>
+    <player-table-prototype :getUrl="getUrl" :title="title"></player-table-prototype>
 </template>
 
 <script>
-    import TableComponent from "~/components/TableComponent/TableComponent.vue";
+    import PlayerTablePrototype from "~/components/PlayerTablePrototype/PlayerTablePrototype.vue";
 
     export default {
-        components: {TableComponent},
+        components: {PlayerTablePrototype},
         name: "team-stats",
         created() {
             this.teamId = this.$route.params.teamId;
-            this.teamName = this.$route.params.teamName;
+            this.title = this.$route.params.teamName;
+            this.getUrl = `/teams/${this.teamId}/players`
         }
     }
 </script>
