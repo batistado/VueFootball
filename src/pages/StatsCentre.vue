@@ -1,17 +1,14 @@
 <template>
 <div>
-    <table-component getUrl="teams" title="Available Teams">
-        <el-table-column prop="id" label="S.No."></el-table-column>
-        <el-table-column prop="name" label="Name"></el-table-column>
-    </table-component>
+    <teams-table></teams-table>
 </div>
 </template>
 
 <script>
-    import TableComponent from "~/components/TableComponent/TableComponent.vue";
+    import TeamsTable from '../components/TeamsTable/TeamTable.vue';
 
     export default {
-        components: {TableComponent},
+        components: {TeamsTable},
         name: "stats-centre"
     }
 </script>
