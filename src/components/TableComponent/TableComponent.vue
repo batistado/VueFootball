@@ -1,7 +1,9 @@
 <template>
     <el-table v-show="!error"
               :data="data"
-              border>
+              border
+              stripe
+              height="250">
         <slot/>
     </el-table>
 </template>
