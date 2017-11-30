@@ -1,9 +1,9 @@
 <template>
-<div>
-    <h1>Welcome to the Stats Centre.</h1>
-    <teams-table></teams-table>
-    <players-table></players-table>
-</div>
+    <div>
+        <h1>Welcome to the Stats Centre.</h1>
+        <teams-table></teams-table>
+        <players-table></players-table>
+    </div>
 </template>
 
 <script>
@@ -13,7 +13,8 @@
     export default {
         components: {
             PlayersTable,
-            TeamsTable},
+            TeamsTable
+        },
         name: "stats-centre"
     }
 </script>

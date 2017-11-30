@@ -1,30 +1,30 @@
 <template>
     <div class="table-component" v-loading="loading" element-loading-text="Loading...">
-        <el-row>
-            <el-col :span="12">
-                <div class="table-component__title">
-                    <slot name="title"><h2>{{title}}</h2></slot>
-                </div>
-            </el-col>
+        <div class="table-component__placeholder" v-show="error">
+            <div class="table-component--error" v-show="error">{{error}}</div>
+        </div>
+        <el-card v-show="!error">
+            <el-row>
+                <el-col :span="12">
+                    <div class="table-component__title">
+                        <slot name="title"><h2>{{title}}</h2></slot>
+                    </div>
+                </el-col>
 
-            <el-col :span="12">
-                <el-input id="searchBox" placeholder="Search" v-model="searchInput"
-                          class="table-component__search" prefix-icon="el-icon-search"
-                          v-if="searchEnabled && !error"></el-input>
+                <el-col :span="12">
+                    <el-input id="searchBox" placeholder="Search" v-model="searchInput"
+                              class="table-component__search" prefix-icon="el-icon-search"
+                              v-if="searchEnabled">
+                    </el-input>
 
-            </el-col>
-        </el-row>
-        <el-row>
-            <div class="table-component__placeholder" v-show="error">
-                <div class="table-component--error" v-show="error">{{error}}</div>
-            </div>
-            <el-table v-show="!error"
-                      :data="filteredData"
-                      border
-                      stripe>
-                <slot></slot>
-            </el-table>
-        </el-row>
+                </el-col>
+                <el-table :data="filteredData"
+                          border
+                          stripe>
+                    <slot></slot>
+                </el-table>
+            </el-row>
+        </el-card>
     </div>
 
 </template>
