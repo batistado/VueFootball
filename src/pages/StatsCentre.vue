@@ -1,8 +1,8 @@
 <template>
 <div>
-    <table-component getUrl="teams">
-        <el-table-column prop="name" label="Name" width="180"></el-table-column>
-        <el-table-column prop="id" label="S.No." width="180"></el-table-column>
+    <table-component getUrl="teams" title="Available Teams">
+        <el-table-column prop="id" label="S.No."></el-table-column>
+        <el-table-column prop="name" label="Name"></el-table-column>
     </table-component>
 </div>
 </template>
