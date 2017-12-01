@@ -4,7 +4,7 @@
         <el-table-column prop="id" label="S.No."></el-table-column>
         <el-table-column prop="name" label="Name">
             <template slot-scope="scope">
-                <router-link :to="{ name: 'teamStats', params: { teamId: scope.row.id, teamName: scope.row.name } }">
+                <router-link :to="{ name: 'teamStats', params: { teamId: scope.row.id } }">
                     {{scope.row.name}}
                 </router-link>
             </template>
